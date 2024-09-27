@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CDN'S -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+
+    <!-- CUSTOM -->
+    <script src="js/jquery-3.5.1.min.js" type="text/javascript"></script>
+    <script src="JS/index.js" type="module"></script>
+
+    <!-- CDN'S -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;900&display=swap" rel="stylesheet">
+
+    <!-- CUSTOM -->
+    <link rel="icon" type="image/x-icon" href="/img/truck_favicon.png">
+    <link rel="stylesheet" href="css/index.css">
+
+    <title>OPERADOR</title>
+</head>
+<body>
+<header>
+    <div id="bannerLogo">
+        <img src="IMG/mainLogo_orange.svg" alt="logo">
+    </div>
+    <div id="bannerText">
+        <p>¡Bienvenido!</p>
+    </div>
+</header>
+    
+<main class="flexCentered vertical">
+
+<!--**************************************************
+    [ INITIAL VIEW ]
+**************************************************-->
+<section id="initialView" class="">
+    <div class="view_100 flexCentered vertical">
+        <h1>Busca tu maniobra.</h1>
+        <input type="text" name="manID_input" id="manID_input" placeholder="Ingresa ID de maniobra." class="textInput">
+        <button id="manSearch_btn" class="btn flexCentered">buscar maniobra</button>
+    </div>
+</section>
+
+
+
+
+
+<!--**************************************************
+    [ DATA VIEW ]
+**************************************************-->
+<section id="maneuverDataView" class="hidden">
+    <div class="view_100 flexCentered vertical">
+        <div class="dataHeader flexCentered">
+            <div class="dataHeader_logo flexCentered">
+                <img src="img/truck.svg" alt="truck">
+            </div>
+            <div class="dataHeader_meta ">
+                <div class="flexCentered"><p id="maneuverID_prompt" class="strong">ID DE MANIOBRA</p></div>
+                <div class="flexCentered vertical">
+                    <p>TIEMPO LÍMITE PARA INICIAR</p>
+                    <P id="counter" class="strong">-</P>
+                </div>
+            </div>
+        </div>
+        
+        <div class="dataContainer">
+            <div class="flexCentered">
+                <div class="rowLogo flexCentered">
+                    <img src="img/calendario.svg" alt="calendar">
+                </div>
+                <div class="rowData">
+                    <p class="strong">Fecha programada.</p>
+                    <P class="light" id="maneuverDate_prompt">Dato fecha programada</P>
+                </div>
+            </div>
+
+            <div class="flexCentered">
+                <div class="rowLogo flexCentered">
+                    <img src="img/cliente.svg" alt="person">
+                </div>
+                <div class="rowData">
+                    <p class="strong">Cliente.</p>
+                    <P class="light" id="maneuverClient_prompt">Dato del cliente</P>
+                </div>
+            </div>
+
+            <!-- <div class="flexCentered">
+                <div class="rowLogo flexCentered">
+                    <img src="img/tamaño.svg" alt="ruler">
+                </div>
+                <div class="rowData">
+                    <p class="strong">Tamaño de la maniobra.</p>
+                    <P class="light" id="maneuverSize_prompt">Dato del tamaño</P>
+                </div>
+            </div> -->
+
+            <div class="flexCentered">
+                <div class="rowLogo flexCentered">
+                    <img src="img/tipo.svg" alt="gear">
+                </div>
+                <div class="rowData">
+                    <p class="strong">Tipo de la maniobra.</p>
+                    <P class="light" id="maneuverType_prompt">Dato del tipo</P>
+                </div>
+            </div>
+
+            <div class="flexCentered">
+                <div class="rowLogo flexCentered">
+                    <img src="img/ubicacion.svg" alt="location">
+                </div>
+                <div class="rowData">
+                    <p class="strong">Ubicación de origen.</p>
+                    <P class="light" id="maneuverOrigin_prompt">Dato del origen.</P>
+                </div>
+            </div>
+
+            <div class="flexCentered">
+                <div class="rowLogo flexCentered">
+                    <img src="img/ubicacion.svg" alt="location">
+                </div>
+                <div class="rowData">
+                    <p class="strong">Ubicación de destino.</p>
+                    <P class="light" id="maneuverDestination_prompt">Dato del destino</P>
+                </div>
+            </div>
+
+            <div class="flexCentered">
+                <button id="back2IV_MDV" class="back_btn flexCentered">
+                    <img src="IMG/flecha.svg" alt="flecha" class="arrow">
+                </button>
+                <button id="go2aslaView" class="btn flexCentered">iniciar maniobra</button>
+            </div>
+       
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<!--**************************************************
+    [VISTA ASLA]
+**************************************************-->
+<section id="aslaView" class="hidden">
+    <div class="view_70 ASLAstepsContainer">
+        <div class="flexCentered vertical">
+            <h1 class="step">¿Estas en ASLA?</h1>
+            <p>Marca el check si llegaste.</p>
+            <input type="checkbox" name="ASLAcheck" id="ASLAcheck" class="checkbox">
+        </div>
+        <div class="flexCentered vertical">
+            <h1 class="step">¿En qué etapa estás?</h1>
+            <p>Selecciona de la lista.</p>
+            <select name="ASLAselect" id="ASLAselect" class="dropdown">
+                <option value="EN ESPERA">En espera</option>
+                <option value="LLAMADO">Llamado</option>
+                <option value="CANCELADO">Cancelada</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="view_30 flexCentered">
+        <button id="back2MDW_AV" class="back_btn flexCentered">
+            <img src="IMG/flecha.svg" alt="flecha" class="arrow">
+        </button>
+        <!-- <button id="" class="btn flexCentered">ver detalles</button> -->
+    </div>    
+</section>
+
+
+
+
+
+<!--**************************************************
+    [ TERMINAL VIEW ]
+**************************************************-->
+<section id="terminalView" class="hidden">
+    <div class="view_70 terminalStepsContainer">
+        <div class="flexCentered vertical">
+            <h1 class="step">¿Estas en la TERMINAL?</h1>
+            <p>Marca el check si llegaste.</p>
+            <input type="checkbox" name="terminalLocationCheck" id="terminalLocationCheck" class="checkbox">
+        </div>
+
+        <div class="flexCentered vertical">
+            <h1 class="step">¿Ya estás cargado?</h1>
+            <p>Marca el check si ya está cargada.</p>
+            <input type="checkbox" name="cargoReady" id="cargoReady" class="checkbox">
+        </div>
+        <div class="flexCentered vertical">
+            <h1 class="step">¿Ya estás fuera de terminal?</h1>
+            <p>Marca el check si estás listo para salir.</p>
+            <input type="checkbox" name="ready2Exit" id="ready2Exit" class="checkbox">
+        </div>
+    </div>
+    <div class="view_30 flexCentered">
+        <button id="back2AV_TV" class="back_btn flexCentered">
+            <img src="IMG/flecha.svg" alt="flecha" class="arrow">
+        </button>
+    </div>  
+</section>
+
+
+
+
+
+<!--**************************************************
+    [VISTA RUTA FISCAL]
+**************************************************-->
+<section id="fiscalView" class="hidden">
+    <div class="view_70 fiscalStepsContainer">
+        <div class="flexCentered vertical">
+            <h1 class="step">En ruta FISCAL</h1>
+            <p>Marca el check para iniciarla.</p>
+            <input type="checkbox" name="fiscalViewCheck" id="fiscalViewCheck" class="checkbox">
+        </div>
+        <div class="flexCentered vertical">
+            <h1 class="step">¿Cuál es la modulación?</h1>
+            <p>Selecciona de la lista.</p>
+            <select name="modSelect" id="modSelect" class="dropdown">
+                <option value="">Sin modulación</option>
+                <option value="LIBERADO">Verde (LIBERADO)</option>
+                <option value="DODA">Amarillo (Requiere DODA)</option>
+                <option value="TRAMITADOR">Rojo (Tramitador)</option>
+                <option value="ROJO">Rojo (En estadía)</option>
+            </select>
+        </div>
+        <div class="flexCentered vertical">
+            <h1 class="step">TRAMITADOR</h1>
+            <p>Selecciona de la lista.</p>
+            <select name="tramitSelect" id="tramitSelect" class="dropdown">
+                <option value="EN ESPERA DE TRAMITADOR">En espera de tramitador</option>
+                <option value="TRAMITADOR EN SITIO">TRAMITADOR en sitio</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="view_30 flexCentered">
+        <button id="back2TV_FV" class="back_btn flexCentered">
+            <img src="IMG/flecha.svg" alt="flecha" class="arrow">
+        </button>
+    </div>  
+</section>
+
+
+
+
+<!--**************************************************
+    [VISTA RUTA FINAL]
+**************************************************-->
+<section id="finalRouteView" class="hidden">
+    <div class="view_70 flexCentered vertical">
+        <h1 class="step">¿En ruta a PATIO?</h1>
+        <p>Marca el check al iniciar la ruta.</p>
+        <input type="checkbox" name="finalRouteCheck" id="finalRouteCheck" class="checkbox">
+    
+        <h1 class="step">¿Ya estás en patio?</h1>
+        <p>Marca el check si ya llegaste al patio.</p>
+        <input type="checkbox" name="unloadSiteCheck" id="unloadSiteCheck" class="checkbox">
+
+        <h1 class="step">¿Ya descargaron la maniobra?</h1>
+        <p>Marca el check si ya descargaron.</p>
+        <input type="checkbox" name="unloadedCheck" id="unloadedCheck" class="checkbox">
+    </div>
+
+    <div class="view_30 flexCentered">
+        <button id="back2FV_FRV" class="back_btn flexCentered">
+            <img src="IMG/flecha.svg" alt="flecha" class="arrow">
+        </button>
+    </div>  
+</section>
+
+
+
+
+<!--**************************************************
+    [ ERROR POP-UP ]
+**************************************************-->
+<div class="view_100 hidden pop-error">
+    <div class="flexCentered popImageContainer error-color">
+        <img src="IMG/warning.svg" alt="error">
+    </div>
+    <div class="popTextPadding flexCentered vertical">
+        <p id="errorText"></p>
+        <button id="closeError" class="flexCentered topMargin popBtn error-color">CERRAR</button>
+    </div>
+</div> 
+
+
+
+
+
+<!--**************************************************
+    [ OK POP-UP]
+**************************************************-->
+<div class="view_100 hidden pop-ok">
+    <div class="flexCentered popImageContainer ok-color">
+        <img src="IMG/ok.svg" alt="error">
+    </div>
+    <div class="popTextPadding flexCentered vertical">
+        <p id="okText"></p>
+        <button id="closeOK" class="flexCentered topMargin popBtn ok-color">CERRAR</button>
+    </div>
+</div> 
+
+
+
+
+
+<!--**************************************************
+    [TOASTS]
+**************************************************-->
+<div class="view_100 toast-error toast">
+    <div class="flexCentered popImageContainer error-color">
+        <img src="IMG/warning.svg" alt="error">
+    </div>
+    <div class="popTextPadding flexCentered vertical">
+        <p id="errorToastPrompt">-</p>
+    </div>
+</div>
+
+<div class="view_100 toast-ok toast">
+    <div class="flexCentered popImageContainer ok-color">
+        <img src="IMG/ok.svg" alt="check">
+    </div>
+    <div class="popTextPadding flexCentered vertical">
+        <p id="okToastPrompt">-</p>
+    </div>
+</div>
+
+<div class="view_100 toast-loader loader">
+    <div class="flexCentered popImageContainer">
+        <img id="truck" src="IMG/truck.svg" alt="check">
+    </div>
+    <div class="popTextPadding flexCentered vertical">
+        <p id="okToastPrompt">PROCESANDO...</p>
+    </div>
+</div>
+
+
+</main>
+</body>
+</html>

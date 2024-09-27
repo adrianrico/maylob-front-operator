@@ -1,0 +1,554 @@
+*
+{
+    margin:     0;
+    padding:    0;
+
+    box-sizing: border-box;
+}
+
+html, body
+{   
+    height: 100svh;
+    width:  100%;
+
+    -ms-overflow-style: none; 
+    scrollbar-width:    none; 
+    
+    overflow-y:         hidden;
+    overflow-x:         hidden;
+    
+    font-family: 'Roboto', sans-serif;
+
+    background-color: #233243;
+
+    background-image:       url("../IMG/wave.svg");
+    background-position:    center;
+    background-repeat:      no-repeat;
+    background-size:        cover;
+}
+
+body::-webkit-scrollbar 
+{
+    display: none;
+}
+
+header
+{
+    height: 10%;
+
+    font-size:      clamp(0.5rem, 1rem, 2rem);
+    font-weight:    100;
+    color:          #f28617;
+
+    display: flex;
+
+    background-image:   url("../IMG/trianglify-lowres.png");
+    background-repeat:  no-repeat;
+    background-size:    cover;
+}
+
+#bannerLogo
+{
+    height: 100%;
+    width:  50%;
+
+    padding-left:   1rem;
+    padding-top:    0.4rem;
+    padding-bottom: 0.4rem;
+
+    display:            flex;
+    align-items:        end;
+    justify-content:    left;
+
+}
+
+#bannerLogo img
+{
+    height: 80%;
+}
+
+#bannerText
+{
+    height: 100%;
+    width:  50%;
+
+    padding-right:  1rem;
+    padding-bottom: 0.4rem;
+
+    display:            flex;
+    align-items:        end;
+    justify-content:    right;
+
+}
+
+main
+{
+    height: 90%;
+}
+
+/******************************************************** 
+Iniciar a modificar el contenido del cuerpo abajo...
+********************************************************/
+
+/*[VISTA INICIAL] ********************************************************/
+#manSearch_btn
+{
+    margin-top: 1rem;
+}
+
+
+
+
+/*[VISTA DE DATOS] ********************************************************/
+.dataHeader
+{
+    height: clamp(100px, 100px, 700px);
+    width:  clamp(300px, 95%, 700px);
+
+    border-radius: 25px;
+
+    background-color: #e5e5e5;
+    
+    margin-top:     0.5rem;
+    margin-bottom:  0.25rem;
+
+}
+
+.dataHeader_logo
+{
+    height: 100%;
+    width:  20%;   
+}
+
+.dataHeader_logo img
+{
+    height: 3.5rem;
+    width:  3.5rem;
+}
+
+.dataHeader_meta
+{
+    height: 100%;
+    width:  80%;
+
+    font-size:      clamp(0.5rem, 1rem, 2rem);
+    font-weight:    100;
+    color:          #233243;
+
+    display: grid;
+    grid-template-rows: auto, auto;
+
+}
+
+.dataContainer
+{
+    height: clamp(300px, 80%, 700px);
+    width:  clamp(300px, 95%, 700px);
+
+    border-radius: 25px;
+
+    background-color: #e5e5e5;
+    
+    margin-top:     0.25rem;
+    margin-bottom:  0.5rem;
+
+    display: grid;
+    grid-template-rows: auto,auto,auto,auto,auto,auto,auto;
+}
+
+.rowData
+{
+    height: 100%;
+    width:  85%;
+
+    display:            flex;
+    flex-direction:     column;
+    align-items:        start;
+    justify-content:    center;
+}
+
+.strong
+{
+    font-size:      clamp(0.5rem, 1rem, 2rem);
+    font-weight:    900;
+    color:          #233243;
+}
+
+.light
+{
+    font-size:      clamp(0.5rem, 1rem, 2rem);
+    font-weight:    100;
+    color:          #f28617;
+}
+
+.rowLogo
+{
+    height: 100%;
+    width:  15%;
+}
+
+.dataContainer img
+{
+    height: 1.25rem;
+    width:  1.25rem;
+}
+
+
+/*[VISTA ASLA] ********************************************************/
+.ASLAstepsContainer
+{
+    display: grid;
+    grid-template-rows: auto,auto;
+}
+
+/*[VISTA TERMINAL] ********************************************************/
+.terminalStepsContainer
+{
+    display: grid;
+    grid-template-rows: auto,auto,auto;
+}
+
+
+/*[VISTA RUTA FISCAL] ********************************************************/
+.fiscalStepsContainer
+{
+    display: grid;
+    grid-template-rows: auto,auto,auto;
+}
+
+
+/******************************************************** 
+Estilos reutilizables...
+********************************************************/
+section
+{
+    height: clamp(300px, 95%, 700px);
+    width:  clamp(300px, 95%, 700px);
+
+    border-radius: 25px;
+
+    background:             rgba(120, 120, 120, 0.25);
+    box-shadow: 0 4px 30px  rgba(0, 0, 0, 0.25);
+    backdrop-filter:            blur(8px);
+    -webkit-backdrop-filter:    blur(8px);
+
+    color: #f28617;
+}
+
+.view_100
+{
+    height: 100%;
+    width:  100%;
+}
+
+.view_70
+{
+    height: 70%;
+    width:  100%;
+}
+
+.view_30
+{
+    height: 30%;
+    width:  100%;
+}
+
+.topMargin
+{
+    margin-top: 5rem;
+}
+
+.checkbox
+{
+    height: 3.5rem;
+    width:  3.5rem;
+
+    margin-top: 1rem;
+
+    accent-color: green;
+}
+
+.dropdown
+{
+    height: 2rem;   
+    width:  18rem;
+    
+    margin-top: 0.5rem;
+    
+    font-size:      clamp(0.5rem, 1rem, 2rem);
+    font-weight:    100;
+    color:          #233243;
+
+    border: none;
+
+    border-radius: 5px;
+
+    padding-left: 0.5rem;
+}
+
+.miniDropdown
+{
+    height: 2rem;   
+    width:  8rem;
+    
+    margin-top: 0.5rem;
+    
+    font-size:      clamp(0.5rem, 1rem, 2rem);
+    font-weight:    100;
+    color:          #233243;
+
+    border: none;
+
+    border-radius: 5px;
+
+    padding-left: 0.5rem;
+}
+
+.textInput
+{
+    height: 2rem;   
+    width:  18rem;  
+    
+    margin-top: 0.5rem;
+
+    font-size:      clamp(0.5rem, 1rem, 2rem);
+    font-weight:    100;
+    color:          #233243;
+
+    border: none;
+
+    border-radius: 5px;
+
+    padding-left: 0.5rem;
+}
+
+.btn
+{
+    height: 4rem;   
+    width:  15rem;   
+
+    border: none;
+
+    font-size:      clamp(0.5rem, 1rem, 3rem);
+    font-weight:    100;
+    text-transform: uppercase;
+    color: #f5dec7;
+
+    background-color: #f28617;
+
+    border-radius: 15px;
+}
+
+.btnImg
+{
+    height: 100%;
+    width:  30%;
+
+    display:            flex;
+    align-items:        center;
+    justify-content:    end;
+
+    padding-right: 0.25rem;
+}
+
+.btnText
+{
+    height: 100%;
+    width:  70%;
+
+    display:            flex;
+    align-items:        center;
+    justify-content:    start;
+
+}
+ 
+.btnImg img
+{
+    height: 1rem;
+}
+
+.back_btn
+{
+    height: 4rem;   
+    width:  4rem;   
+
+    margin-right: 0.5rem;
+
+    background-color: #233243;
+
+    border: none;
+    border-radius: 50px;
+}
+
+.back_btn img
+{
+    height: 1rem;
+}
+
+.arrow
+{
+    -webkit-transform:  rotate(270deg);
+    -moz-transform:     rotate(270deg);
+    -ms-transform:      rotate(270deg);
+    -o-transform:       rotate(270deg);
+    transform:          rotate(270deg);
+}
+
+.hidden
+{
+    display: none;
+}
+
+.flexCentered
+{
+    display:            flex;
+    align-items:        center;
+    justify-content:    center;
+}
+
+.vertical
+{
+    flex-direction: column;
+}
+
+.pop-up
+{
+    width:  95%; 
+    height: 95%;
+
+    position:   fixed;
+    top:        50%; 
+    left:       50%;
+    transform:  translate(-50%, -50%);
+
+    z-index: 1000;
+    
+    background:             rgba(255, 255, 255, 0.5);
+    box-shadow: 0 4px 30px  rgba(0, 0, 0, 0.1);
+    backdrop-filter:            blur(8px);
+    -webkit-backdrop-filter:    blur(8px);
+
+    border-radius: 25px;
+
+    display: grid;
+    grid-template-rows: auto, auto;
+
+    font-size:      clamp(0.5rem, 1rem, 2rem);
+    font-weight:    900;
+    color:          #233243;
+}
+
+.popImageContainer 
+{   
+    width: 100%;
+
+    border-top-left-radius:     25px;
+    border-top-right-radius:    25px;    
+}
+
+.popImageContainer img
+{
+    height: 10rem;
+}
+
+.popTextPadding
+{
+    padding: 1.5rem;
+}
+
+.popBtn
+{
+    height: 4rem;   
+    width:  15rem;   
+
+    border: none;
+
+    border-radius: 15px;
+}
+
+.error-color
+{
+    color: #f5dec7;
+    background-color: #f74f4f;
+}
+
+.ok-color
+{
+    color: #d1fed1;
+    background-color: #009800;
+}
+
+
+.disabledBtn
+{
+    display: none;
+}
+
+
+.toast-error, .toast-ok, .toast-loader
+{
+    display: none;
+}
+
+.toast
+{
+    height: clamp(300px, 95%, 600px);
+    width:  clamp(300px, 95%, 600px);  
+
+    position:   fixed;
+    top:        50%; 
+    left:       50%;
+    transform:  translate(-50%, -50%);
+
+    z-index: 1000;
+    
+    background:             rgba(255, 255, 255, 0.5);
+    box-shadow: 0 4px 30px  rgba(0, 0, 0, 0.1);
+    backdrop-filter:            blur(8px);
+    -webkit-backdrop-filter:    blur(8px);
+
+    border-radius: 25px;
+
+    grid-template-rows: auto, auto;
+
+    font-size:      clamp(0.5rem, 1.25rem, 2rem);
+    font-weight:    900;
+    color:          #233243;
+}
+
+
+.toast-loader
+{
+    width:  300px; 
+    height: 300px;
+
+    position:   fixed;
+    top:        50%; 
+    left:       50%;
+    transform:  translate(-50%, -50%);
+
+    z-index: 1000;
+    
+    background:             rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 30px  rgba(0, 0, 0, 0.1);
+    backdrop-filter:            blur(8px);
+    -webkit-backdrop-filter:    blur(8px);
+
+    border-radius: 25px;
+
+    grid-template-rows: auto, auto;
+
+    font-size:      clamp(0.5rem, 1.25rem, 2rem);
+    font-weight:    900;
+    color:          #233243;
+}
+
+
+.cyan{border: cyan 1px solid;}
+.cyan-d{border: cyan 1px dashed;}
+.red{border: red 1px solid;}
+.red-d{border: red 1px dashed;}
+.green{border: greenyellow 1px solid;}
+.green-d{border: greenyellow 1px dashed;}
+.blue{border: blue 1px solid;}
+.blue-d{border: blue 1px dashed;}
