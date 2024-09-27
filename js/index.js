@@ -50,8 +50,8 @@ $("#manSearch_btn").click(function()
        *  - Search maneuver in DB by AJAX request...
        */
       $.ajax({
-         url: 'http://localhost:8080/man/findManeuver',
-         //url: 'https://maylob-server.onrender.com/man/findManeuver',
+         //url: 'http://localhost:8080/man/findManeuver',
+         url: 'https://maylob-backend.onrender.com/man/findManeuver',
          type: "get",
          dataType: 'json',
          data:maneuverID,
@@ -484,8 +484,9 @@ function updateManeuver(id2update,eventTime,location2update,status2update)
     }
 
     $.ajax({
-        url: 'http://localhost:8080/man/updateManeuver/',
-        //url: 'https://maylob-server.onrender.com/man/updateManeuver/'+id2update,
+        //url: 'http://localhost:8080/man/updateManeuver/',
+        url: 'https://maylob-backend.onrender.com/man/updateManeuver/',
+        //url: 'https://maylob-backend.onrender.com/man/updateManeuver/'+id2update,
         type: "patch",
         dataType: 'json',
         data:data2update,
