@@ -21,7 +21,7 @@ html, body
 
     background-color: #233243;
 
-    background-image:       url("../IMG/wave.svg");
+    background-image:       url("/img/wave.svg");
     background-position:    center;
     background-repeat:      no-repeat;
     background-size:        cover;
@@ -42,7 +42,7 @@ header
 
     display: flex;
 
-    background-image:   url("../IMG/trianglify-lowres.png");
+    background-image:   url("/img/trianglify-lowres.png");
     background-repeat:  no-repeat;
     background-size:    cover;
 

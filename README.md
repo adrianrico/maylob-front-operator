@@ -6,14 +6,10 @@
 ## EXTENDED CHANGE LOG:
 
 >### INDEX (HTML)
-  >>- initial COMMIT
+  >- Changed media, CSS and JS resources dir...
 
 >### JS  
-  >> - #### GSAP
-  >>> - Initial COMMIT
-
->### IMG
-  >- initial COMMIT
+  >- Changed AJAX to prod...
 
 >### CSS
-  >- initial COMMIT
+    >- Changed media resources dir...
